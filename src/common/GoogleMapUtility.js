@@ -3,6 +3,11 @@ import {LatLngWGS84} from "british-isles-gridrefs";
 const rad2deg = 180.0 / Math.PI;
 const deg2rad = Math.PI / 180.0;
 
+/**
+ * co-ordinate conversion functions, derived from php code published as part of the GoogleMapsBook.com
+ * https://web.archive.org/web/20130710084256/http://uwmike.com/maps/GoogleMapUtility.php.source
+ *
+ */
 export class GoogleMapUtility {
     static TILE_SIZE = 256;
 

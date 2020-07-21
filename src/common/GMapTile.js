@@ -1,19 +1,13 @@
-/**
- * base svg google map tile
- *
- * @constructor
- * @param {Document} document
- * @param {number} width
- * @param {number} height
- */
 import {MapDataseriesConfiguration} from "./MapDataseriesConfiguration";
 import {GoogleMapUtility} from "./GoogleMapUtility";
 import {MapConfiguration} from "./MapConfiguration";
 import {SVG} from "./SVG";
 
-//const deg2rad = Math.PI / 180;
 const rad2deg = 180.0 / Math.PI;
 
+/**
+ * svg google map tile
+ */
 export class GmapTile {
 
     /**
@@ -26,8 +20,11 @@ export class GmapTile {
      */
     tileY;
 
+
     /**
      *
+     *
+     * @constructor
      * @param {Document} document
      * @param {number} width
      * @param {number} height
