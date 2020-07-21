@@ -16,6 +16,22 @@ const rad2deg = 180.0 / Math.PI;
 
 export class GmapTile {
 
+    /**
+     * @type {number}
+     */
+    tileX;
+
+    /**
+     * @type {number}
+     */
+    tileY;
+
+    /**
+     *
+     * @param {Document} document
+     * @param {number} width
+     * @param {number} height
+     */
     constructor (document, width, height) {
         this.document = document;
         this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -31,7 +47,6 @@ export class GmapTile {
      * @param {number} x
      * @param {number} y
      * @param {number} zoom
-     * @returns {undefined}
      */
     set_tile(x, y, zoom) {
         this.tileX = x;
@@ -628,7 +643,7 @@ GmapTile.gridlabelZoomSizeMapping = [
     16, 17, 18, 19, 20, 20, 20, // 100km squares up to zoom 7
     10, 14, // 10km squares up to zoom 9
     10, 12, 16, // 2km squares up to zoom 12
-    12, 14, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16 // 1km sqaures above that
+    12, 14, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16 // 1km squares above that
 ];
 
 

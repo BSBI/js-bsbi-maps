@@ -36,6 +36,13 @@ export class BinaryGridsquareListSource extends GridsquareListSource {
      */
     arrayBuffer = null;
 
+    /**
+     * byte offset to national grid
+     *
+     * @type {{gb : number, ie : number, ci : number}}
+     */
+    nationalGrids;
+
     static EVENT_DATA_LOADED = 'data loaded';
 
     static nationalGridDimensions = {
@@ -60,7 +67,6 @@ export class BinaryGridsquareListSource extends GridsquareListSource {
     /**
      *
      * @param {string} url
-     * @returns {undefined}
      */
     load_binary(url) {
         let binaryFetchRequest = new XMLHttpRequest;
@@ -121,6 +127,11 @@ export class BinaryGridsquareListSource extends GridsquareListSource {
         this.fireEvent(BinaryGridsquareListSource.EVENT_DATA_LOADED);
     }
 
+    /**
+     *
+     * @param {string} countryCode
+     * @returns {number} byte offset
+     */
     get_national_grid_handle(countryCode) {
         return this.nationalGrids[countryCode];
     }
