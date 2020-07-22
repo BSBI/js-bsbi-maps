@@ -73,11 +73,10 @@ GSvgMapType.prototype.getTile = function (coord, zoom, ownerDocument) {
         }
     }
 
-    if (tile.svg.hasChildNodes()) {
-        return tile.svg;
-    } else {
-        return ownerDocument.createElement('div');
-    }
+    return (tile.svg.hasChildNodes()) ?
+        tile.svg
+        :
+        ownerDocument.createElement('div');
 };
 
 GSvgMapType.prototype.name = "SVG";

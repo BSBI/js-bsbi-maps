@@ -8,8 +8,6 @@ import {
 import {stop_event} from "../utils/stopEvent";
 import {MapDataseriesConfiguration} from "./MapDataseriesConfiguration";
 import {MapDataseriesStyle} from "./MapDataseriesStyle";
-import {remove_class} from "../utils/remove_class";
-import {add_class} from "../utils/add_class";
 import {has_class} from "../utils/has_class";
 import {IframeSize} from "../utils/IFrameSize";
 import {selectOption} from "../utils/selectOption";
