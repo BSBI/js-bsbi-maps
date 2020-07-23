@@ -518,7 +518,7 @@ export class GMap extends EventHarness {
         google.maps.event.addListener(this.gmap, 'mousemove', callback_external_param(this, 'gmouse_move_handler'));
         google.maps.event.addListener(this.gmap, 'click', callback_external_param(this, 'gmouse_click_handler'));
         google.maps.event.addListener(this.gmap, 'zoom_changed', callback_external_param(this, 'zoom_change_handler'));
-        google.maps.event.addListener(this.gmap, 'dragend', callback_external_param(this, 'drag_end_handler'));
+        //google.maps.event.addListener(this.gmap, 'dragend', callback_external_param(this, 'drag_end_handler'));
         google.maps.event.addListener(this.gmap, 'maptypeid_changed', callback_external_param(this, 'map_type_change_handler'));
 
         google.maps.event.trigger(this.gmap, 'resize'); // ensures this maps specified as 100% wide are filled
@@ -774,44 +774,39 @@ export class GMap extends EventHarness {
             this.imageId = '';
         }
 
-        //this.tabSwitchButton = null;
-
-        //this.controlsPane = null;
-        // this.partitionOverlays = null;
-        //this.bsbidbMapOptions = null;
         this.mapBounds = null;
         this.bounds = null;
 
         this.gmap = null;
     }
 
-    /**
-     *
-     * @returns {undefined}
-     */
-    drag_end_handler() {
-        const c = this.gmap.getCenter();
-
-        if (!this.mapBounds.contains(c)) {
-            // move the map back within the bounds
-            let x = c.lng(),
-                y = c.lat();
-
-            if (x < this.bounds.minX) {
-                x = this.bounds.minX;
-            } else if (x > this.bounds.maxX) {
-                x = this.bounds.maxX;
-            }
-
-            if (y < this.bounds.minY) {
-                y = this.bounds.minY;
-            } else if (y > this.bounds.maxY) {
-                y = this.bounds.maxY;
-            }
-
-            this.gmap.setCenter(new google.maps.LatLng(y, x));
-        }
-    }
+    // /**
+    //  *
+    //  * @returns {undefined}
+    //  */
+    // drag_end_handler() {
+    //     const c = this.gmap.getCenter();
+    //
+    //     if (!this.mapBounds.contains(c)) {
+    //         // move the map back within the bounds
+    //         let x = c.lng(),
+    //             y = c.lat();
+    //
+    //         if (x < this.bounds.minX) {
+    //             x = this.bounds.minX;
+    //         } else if (x > this.bounds.maxX) {
+    //             x = this.bounds.maxX;
+    //         }
+    //
+    //         if (y < this.bounds.minY) {
+    //             y = this.bounds.minY;
+    //         } else if (y > this.bounds.maxY) {
+    //             y = this.bounds.maxY;
+    //         }
+    //
+    //         this.gmap.setCenter(new google.maps.LatLng(y, x));
+    //     }
+    // }
 
     zoom_change_handler() {
         if (this.gmap.getZoom() < this.minZoomLevel) {
