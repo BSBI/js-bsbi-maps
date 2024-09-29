@@ -1,6 +1,6 @@
-// rollup.config.js
+// rollup.config.mjs
 import resolve from '@rollup/plugin-node-resolve';
-import babel from '@rollup/plugin-babel';
+//import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 //import { terser } from 'rollup-plugin-terser';
 
@@ -10,7 +10,7 @@ export default {
     input: 'src/index.js',
     output: {
         file: 'dist/bsbimaps.js',
-        format: 'es', // 'es'
+        format: 'esm', // 'es'
         sourcemap: true
     },
     external: ['BsbiDb', 'SearchForm', 'scriptVersions', 'MapStyleTemplates', 'GisAreaTypes', 'OfflineTaxonDropBox'],
@@ -22,10 +22,10 @@ export default {
 		}
 	  }),
       commonjs(),
-    babel({
-      exclude: 'node_modules/**', // only transpile our source code
-      babelHelpers: 'runtime'
-    }),
+    // babel({
+    //   exclude: 'node_modules/**', // only transpile our source code
+    //   babelHelpers: 'runtime'
+    // }),
     //production && terser() // minify, but only in production
   ]
 };
