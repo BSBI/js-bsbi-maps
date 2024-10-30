@@ -17,9 +17,9 @@ export default {
   plugins: [
     resolve({
 		// pass custom options to the resolve plugin
-		customResolveOptions: {
-		  moduleDirectory: 'node_modules'
-		}
+		// customResolveOptions: {
+		//   moduleDirectory: 'node_modules'
+		// }
 	  }),
       commonjs(),
     // babel({
